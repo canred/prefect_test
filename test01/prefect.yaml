@@ -15,8 +15,8 @@ push:
     script: |
       echo "Pushing project files to remote repository..."
       git add .
-      git commit -m "Update deployment files - $(date)"
-      git push -u origin main
+      git commit -m "Update deployment files - %date% %time%" || echo "No changes to commit"
+      git push origin main
     stream_output: true
 
 # pull section allows you to provide instructions for cloning this project in remote locations
