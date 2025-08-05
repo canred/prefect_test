@@ -10,22 +10,22 @@ prefect-version: 3.4.10
 build: null
 
 # push section allows you to manage if and how this project is uploaded to remote locations
-push:
-- prefect.deployments.steps.run_shell_script:
-    script: |
-      echo "Pushing project files to remote repository..."
-      git add .
-      git commit -m "Update deployment files - %date% %time%" || echo "No changes to commit"
-      git push origin main
-    stream_output: true
+push: null
+# - prefect.deployments.steps.run_shell_script:
+#     script: |
+#       echo "Pushing project files to remote repository..."
+#       git add .
+#       git commit -m "Update deployment files - %date% %time%" || echo "No changes to commit"
+#       git push origin main
+#     stream_output: true
 
 # pull section allows you to provide instructions for cloning this project in remote locations
 pull:
-# - prefect.deployments.steps.set_working_directory:
-#     directory: d:\GitHub\prefect_test\test01
-- prefect.deployments.steps.git_clone:
-    repository: https://github.com/canred/prefect-flow-test1.git
-    branch: main
+- prefect.deployments.steps.set_working_directory:
+    directory: d:\GitHub\prefect_test\test01
+# - prefect.deployments.steps.git_clone:
+#     repository: https://github.com/canred/prefect_test.git
+#     branch: main
 - prefect.deployments.steps.pip_install_requirements:
     requirements_file: requirements.txt
     stream_output: true
