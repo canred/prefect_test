@@ -30,7 +30,7 @@ def scan_and_store_files():
         target_folder = os.getenv('TARGET_FOLDER', 'd:/new_folder')
         
         logger.info("=== Job Variables Debug Information ===")
-        logger.info("Version:1.0.1")
+        logger.info("Version:1.0.2")
         logger.info(f"REDIS_HOST = {redis_host}")
         logger.info(f"REDIS_PORT = {redis_port}")
         logger.info(f"REDIS_DB = {redis_db}")
